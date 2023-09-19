@@ -12,9 +12,10 @@ export default async function Home() {
   const urlCategory = "https://apitest.rdedigital.com/api/v1/posts/category/:category"
 
   const res = await fetch(urlLatePost,{
-    // cache: 'no-cache', 
+    cache: 'no-cache', 
   });
   const data = await res.json() as PostData[];
+  
 
   
 
