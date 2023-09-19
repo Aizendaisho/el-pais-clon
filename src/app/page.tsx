@@ -11,38 +11,44 @@ export default async function Home() {
   const urlId = "https://apitest.rdedigital.com/api/v1/posts/:id"
   const urlCategory = "https://apitest.rdedigital.com/api/v1/posts/category/:category"
 
-  const res = await fetch(urlLatePost);
+  const res = await fetch(urlLatePost,{
+    // cache: 'no-cache', 
+  });
   const data = await res.json() as PostData[];
 
   
 
   return (
   <div >
-  <Header />
+ 
   <div className="flex flex-col items-center justify-center">
 
 
   </div>
 
     <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4 text-center">
-  <HeroCard />
-      <h2 className="text-2xl font-bold underline">ultimos posts</h2>
-      {data.map((post:PostData) => (
-        <div key={post.id} className="flex flex-col items-center justify-center p-4 text-center w-20">
-          <div className="grid gap-2">
+  {/* <HeroCard /> */}
 
-          <h3>{post.title.rendered}</h3>
-          <p>{post.author.name}</p>
-          <p>{post.date}</p>
-          <p>{post.author.description}</p>
-          <p>{post.author.link}</p>
-          {post.media && <Image src={post.media} width={704} height={397} alt={post.media} ></Image>}
-          <p>{post.tags[0]}</p>
+      {data.map((post:PostData) => (
+        <HeroCard key={post.id} image={post.media} title={post.title.rendered}  author={post.author.name}  content={post.excerpt.rendered} description={post.content.rendered} id={post.id} finalConent={post.comment_status} />
+        // <div key={post.id} className="flex flex-col items-center justify-center p-4 text-center w-20">
+        //   <div className="grid gap-2">
+
+        //   <h3>{post.title.rendered}</h3>
+        //   <p>{post.author.name}</p>
+        //   <p>{post.date}</p>
+        //   <p>{post.author.description}</p>
+        //   <p>{post.author.link}</p>
+        //   {post.media && <Image src={post.media} width={704} height={397} alt={post.media} ></Image>}
+        //   {/* <p>{post.content.rendered}</p> */}
+        //   <p>{post.excerpt.rendered}</p>
+          
+
           
           
-          </div>
+        //   </div>
           
-        </div>
+        // </div>
       ))}
      
     </main>
