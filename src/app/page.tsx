@@ -15,6 +15,7 @@ export default async function Home() {
     cache: 'no-cache', 
   });
   const data = await res.json() as PostData[];
+
   
 
   
@@ -27,29 +28,12 @@ export default async function Home() {
 
   </div>
 
-    <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4 text-center">
-  {/* <HeroCard /> */}
+    <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4 text-center gap-4">
 
       {data.map((post:PostData) => (
-        <HeroCard key={post.id} image={post.media} title={post.title.rendered}  author={post.author.name}  content={post.excerpt.rendered} description={post.content.rendered} id={post.id} finalConent={post.comment_status} />
-        // <div key={post.id} className="flex flex-col items-center justify-center p-4 text-center w-20">
-        //   <div className="grid gap-2">
-
-        //   <h3>{post.title.rendered}</h3>
-        //   <p>{post.author.name}</p>
-        //   <p>{post.date}</p>
-        //   <p>{post.author.description}</p>
-        //   <p>{post.author.link}</p>
-        //   {post.media && <Image src={post.media} width={704} height={397} alt={post.media} ></Image>}
-        //   {/* <p>{post.content.rendered}</p> */}
-        //   <p>{post.excerpt.rendered}</p>
-          
-
-          
-          
-        //   </div>
-          
-        // </div>
+        
+        <HeroCard key={post.id} image={post.media} title={post.title.rendered}  author={post.author.name}  content={post.excerpt.rendered} description={post.content.rendered} id={post.id} finalConent={post.category} />
+      
       ))}
      
     </main>

@@ -29,7 +29,7 @@ function SecondHeader() {
       <div className="text-xs">
         {formatearFecha(fechaActual)} <span className="text-gray-400">|</span>{" "}
         <span>{formatearFechaActualizado(fechaActual)}</span>{" "}
-        <span className="text-gray-400">|</span>
+        <span className="text-gray-400"></span>
       </div>
 
       <button className=" bg-yellow-400 text-black font-extrabold uppercase px-1.5 py-1 text-xs ">
