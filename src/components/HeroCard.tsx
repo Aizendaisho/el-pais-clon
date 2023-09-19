@@ -27,7 +27,7 @@ function HeroCard( props: PostCard ) {
         <span style={{fontSize: "10px"}} className=' text-gray-500 text-right justify-self-end '>{props?.title}</span>
         </div>
 
-        <h3 className={`${majeritBold.className} text-2xl font-serif text-left mb-2`}>{props?.title}</h3>
+        <h3 className={`${majeritBold.className} text-2xl font-serif text-left mb-2 leading-6 `}>{props?.title}</h3>
         <span  className={`${marcinan.className} uppercase text-xs text-gray-500 text-left`}>{props?.author}</span>
         <p style={{fontSize: "15px"}} className={`${majeritRoman.className}  text-gray-400 text-left pt-1`}>La candidata a la vicepresidencia agita la batalla cultural de la ultraderecha </p>
         <p className={`${majeritBold.className} font-bold pt-2 text-left`}>{props?.finalConent}</p>

@@ -1,6 +1,8 @@
+import localFont from 'next/font/local'
 import React from "react";
 
 function SecondHeader() {
+  // const marcinan = localFont({ src: './fonts/marcinantb-regular-webfont.woff2' })
   const fechaActual = new Date();
 
   function formatearFecha(fecha: Date): string {
@@ -32,8 +34,8 @@ function SecondHeader() {
         <span className="text-gray-400"></span>
       </div>
 
-      <button className=" bg-yellow-400 text-black font-extrabold uppercase px-1.5 py-1 text-xs ">
-        Suscribírte
+      <button style={{fontSize:"10px"}} className={`  bg-yellow-400 text-black font-extrabold uppercase px-1.5 py-1  `}>
+        Suscríbete
       </button>
     </div>
   );
